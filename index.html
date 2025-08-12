@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        *{
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        body{
+            background: #faf9f6;
+            font-family: 'Sansation', sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+        }
+        .heading a{
+            color:#626161;
+            padding:0px;
+            font-size: 40px; 
+            text-align: start;
+            padding-left:80px;
+        }
+        .heading{
+            display: flex;
+            font-size: 13px;
+            text-align: center;
+        }
+        .heading h2{
+            padding-left:150px;
+            color: slategrey;
+            text-align: center;
+        }
+        .left-section{
+            width:50%;
+            height:100%;
+        }
+        .right-section{
+            width:45%;
+            height:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .google{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            border: #191919 solid 1px;
+            margin-top:20px;
+            border-radius:0px;
+            padding:10px;
+            padding-right: 30px;
+
+        }
+        .method {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .payment-section{
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 80%; 
+            margin: auto; 
+        }
+
+        .vertical{
+            width: 2px;
+            height: 95%;
+            background-color: #ccc;
+            position: absolute;
+            left: 50%;
+            top:20px;
+            bottom: 5px;
+            color: #191919;
+        }
+
+        .bank{
+            margin-left:70px;
+        }
+
+        .zyr{
+            font-size: 40px;
+            color: #191919;
+            font-weight: 300;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            height: 100vh;
+        }  
+        
+        .pay{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            gap:20px;
+            margin-top:20px;
+            padding:0 40px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pay h4{
+            color: #191919;
+            font-size: 20px;
+            font-weight: 100;
+            padding-left: 0;
+        }
+        .pay button{
+            background-color: white;
+            color: #191919;
+            border: 1px solid #191919;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .heading a {
+                font-size: 40px;
+                padding-left: 40px;
+            }
+            .heading h2 {
+                padding-left: 100px;
+            }
+            .payment-section {
+                padding: 30px;
+                width: 90%;
+            }
+            .method {
+                gap: 15px;
+            }
+            .bank {
+                margin-left: 40px;
+            }
+            .zyr {
+                font-size: 30px;
+            }
+            .pay {
+                gap: 20px;
+                padding: 0 30px;
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+                height: auto;
+            }
+            .left-section {
+                width: 100%;
+                height: auto;
+            }
+            .right-section {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+            .vertical {
+                display: none;
+            }
+            .heading {
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            .heading a {
+                font-size: 30px;
+                padding-left: 0;
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .heading h2 {
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0;
+            }
+            .payment-section {
+                padding: 20px;
+                width: 100%;
+            }
+            .google {
+                padding: 10px;
+            }
+            .method {
+                gap: 20px;
+            }
+            .google img {
+                width: 40px;
+            }
+            .google h3 {
+                flex-grow: 1;
+                margin: 0;
+            }
+            .bank {
+                margin-left: 0;
+                text-align: center;
+            }
+            .zyr {
+                font-size: 24px;
+                text-align: center;
+            }
+            .pay {
+                gap: 20px;
+                justify-content: space-between;
+                padding: 0 20px;
+                width: 100%;
+            }
+            .pay h4 {
+                padding-left: 0;
+            }
+            .pay button {
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heading a {
+                font-size: 24px;
+                left: 10px;
+            }
+            .heading h2 {
+                font-size: 16px;
+            }
+            .payment-section {
+                padding: 10px;
+            }
+            .google {
+                gap: 10px;
+                padding: 10px;
+            }
+            .method {
+                gap: 10px;
+            }
+            .google img {
+                width: 30px;
+            }
+            .google h3 {
+                font-size: 16px;
+            }
+            .bank h2 {
+                font-size: 18px;
+            }
+            .pay h4 {
+                font-size: 18px;
+            }
+            .pay button {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+            .zyr h2 {
+                font-size: 20px;
+            }
+        }
+        /* Shorten left arrow (←) by compressing horizontally */
+        
+       
+    </style>
+    <div class="container">
+    <div class="left-section">
+        <div class="heading">
+            <a href="https://www.Zara.com/">&larr;</a>
+            <h2>Payment Methods</h2>
+              
+        </div>
+        <hr style="width: 80%; margin: auto; border: 1px solid #ccc;"> 
+        <div class="payment-section">
+            <div class="google" id="method">
+                <div class="method">
+                    <img src="pics/googlepay.png" alt="Google Pay" width="50">
+                    <h3>Google Pay</h3>
+                </div>
+                <span style="font-size: 20px;color:#191919;">&rarr;</span>
+            </div>
+            <div class="google" id="method1">
+                <div class="method">
+                    <img src="pics/phonepe.png" alt="PhonePe" width="50">
+                    <h3>Phonepe</h3>
+                </div>
+                <span style="font-size: 20px;color:#191919;">&rarr;</span>
+            </div>
+            <div class="google" id="method2">
+                <div class="method">
+                    <img src="pics/a213.jpeg" alt="Paytm" width="50">
+                    <h3>Paytm</h3>
+                </div>
+                <span style="font-size: 20px;color:#191919;">&rarr;</span>
+            </div>
+            <div class="google" id="method3">
+                <div class="method">
+                    <img src="pics/netbank.jpg" alt="Net Banking" width="50">
+                    <h3>Net Banking</h3>
+                </div>
+                <span style="font-size: 20px;color:#191919;">&rarr;</span>
+            </div>
+
+
+
+        </div><br><br><br><br>
+         <hr style="width: 80%; margin: auto; border: 1px solid #ccc;"> 
+        <div class="pay">
+             <h4>Total amount</h4>
+            <h4>₹500/-</h4>
+
+        </div>
+        <div class="vertical"></div>
+
+        
+    </div>
+    
+    
+
+    <div class="right-section">
+        
+        <div class="zyr">
+            <h2>Pay with Zyraa</h2></div>
+        </div>
+
+        </div>
+
+
+
+
+        <script>
+            document.getElementById("method").addEventListener("click", function() {
+            window.location.href = "https://pay.google.com/about/"; // Change to your actual page
+  });
+  document.getElementById("method1").addEventListener("click", function() {
+                window.location.href = "https://www.phonepe.com/"; // Change to your actual page
+            });
+            document.getElementById("method2").addEventListener("click", function() {
+                window.location.href = "https://www.paytm.com/"; // Change to your actual page
+            });
+            document.getElementById("method3").addEventListener("click", function() {
+                window.location.href = "https://www.netbanking.com/"; // Change to your actual page
+            });
+        
+        </script>
+
+    
+</body>
+</html>
